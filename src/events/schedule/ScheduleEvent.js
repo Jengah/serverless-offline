@@ -8,6 +8,9 @@ export default class ScheduleEvent {
 
   ['detail-type'] = 'Scheduled Event'
 
+  console.log('ACCOUNTID BEING USED:')
+  console.log(env.SLS_ACCOUNT_ID)
+
   id = env.SLS_ACCOUNT_ID || createUniqueId()
 
   region = null
