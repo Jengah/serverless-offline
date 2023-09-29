@@ -1,4 +1,5 @@
 import { createUniqueId } from '../../utils/index.js'
+import { env } from 'node:process'
 
 export default class ScheduleEvent {
   account = createUniqueId()
@@ -7,7 +8,7 @@ export default class ScheduleEvent {
 
   ['detail-type'] = 'Scheduled Event'
 
-  id = createUniqueId()
+  id = env.SLS_ACCOUNT_ID || createUniqueId()
 
   region = null
 
